@@ -1,42 +1,20 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    char name[50];
+int main()
+{
+    char str[50];
 
-    cout << "Enter name : ";
-    cin >> name;
+    cout << "Enter String : ";
+    cin >> str;
 
-    int len = 0;
+    char *ptr = str;
 
-    for (int i = 0; name[i] != '\0'; i++)
-    {
-        len++;
-    }
+    int n = 0;
+    for (int i = 0; ptr[i] != '\0'; i++)
+        n++;
 
-    char rev[50];
-    int j = 0;
-    for(int i = len - 1; i >= 0; i--) {
-        rev[j] = name[i];
-        j++;
-    }
-    rev[j] = '\0';
+    cout << n;
 
-    int mark = 0;
-    for (int i = 0; i < len; i++)
-    {
-        if(rev[i] == name[i]) {
-            mark = 1;
-        }
-        else{
-            mark = 0;
-        }
-    }
-
-    if(mark) {
-        cout << rev << " & " << name << " Palindrom Strings.";
-    }
-    else{
-        cout << rev << " & " << name << " Not Palindrom Strings.";
-    }   
+    return 0;
 }

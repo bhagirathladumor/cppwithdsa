@@ -1,29 +1,27 @@
 #include <iostream>
-#include <cstring>
+#include "functions.cpp"
 using namespace std;
 
 int main()
 {
-    char name[50];
-    cout << "Enter Name : ";
-    cin >> name;
+    int size;
 
-    int len = strlen(name);
+    cout << "Enter size of row & column: ";
+    cin >> size;
 
-    for (int i = 0; i < len; i++)
+    int a[size][size];
+    cout << endl << endl;
+    for (int i = 0; i < size; i++)
     {
-        int y = 0, z = 1;
-        for(int j = 0; j < i; j++) {
-            if(name[i] == name[j])
-                z++;
+        for (int j = 0; j < size; j++)
+        {
+            cout << "Enter a[" << i << "][" << j << "] : ";
+            cin >> a[i][j];
         }
-
-        for(int j = 0; j < len; j++) {
-            if(name[i] == name[j])
-                y++;
-        }
-
-        if(z <= 1)
-            cout << name[i] << " = " << y << endl << endl ;
+        cout << endl;
     }
+    
+    cube_of_array(&a[0][0], size);
+    
+    return 0;
 }
